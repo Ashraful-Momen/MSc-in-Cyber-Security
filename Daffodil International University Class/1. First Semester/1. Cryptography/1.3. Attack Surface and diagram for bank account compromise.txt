@@ -1,0 +1,24 @@
+১. Attack Surface (আক্রমণ এলাকা)
+সংজ্ঞা: একটি সিস্টেম, নেটওয়ার্ক বা অ্যাপ্লিকেশনের যে সমস্ত পয়েন্ট, ফাংশন বা পথ (paths) ব্যবহার করে কোনো হ্যাকার সিস্টেমে প্রবেশ করতে পারে বা ডেটা চুরি করতে পারে, সেই সমস্ত দুর্বল পয়েন্টগুলোর মোট সমষ্টিকে Attack Surface বলে। অর্থাৎ, একটি সিস্টেমের যতটুকু অংশ বাইরের জগতের কাছে উন্মুক্ত থাকে।
+বই অনুযায়ী একে প্রধানত ৩টি ক্যাটাগরিতে ভাগ করা হয়:
+• Network Attack Surface: নেটওয়ার্ক প্রোটোকল বা কানেকশনের দুর্বলতা। যেমন: ওপেন পোর্ট (Open ports), ফায়ারওয়ালের ত্রুটি বা অরক্ষিত রাউটার।
+• Software Attack Surface: অ্যাপ্লিকেশন বা কোডের দুর্বলতা। যেমন: ইনপুট ভ্যালিডেশন না থাকা, ওয়েব সার্ভিসের ত্রুটি বা ডেটাবেজ ইনজেকশন পয়েন্ট।
+• Human Attack Surface: মানুষের ভুল বা অসচেতনতা। যেমন: ফিশিং ইমেইলে ক্লিক করা, সোশাল ইঞ্জিনিয়ারিং বা দুর্বল পাসওয়ার্ড রাখা।
+
+------------------------------------------
+
+[ Root Node: Bank Account Compromise ]
+                                │
+   ┌────────────────────────────┼────────────────────────────┐
+   ▼                            ▼                            ▼
+[ User Credential ]      [ Injection of ]            [ Use of Known ]
+  Compromise                Commands                  Auth. Session
+   │                            │                            │
+   ├─► User surveillance        └─► Active man-in-           └─► Pre-defined 
+   ├─► Theft of token               the-middle                   session IDs
+   ├─► Malicious software           attack                       (Session hijacking)
+   │     └─► Hidden code
+   ├─► Smartcard analyzers
+   ├─► Brute force / PIN calculators
+   ├─► CC2 Sniffing
+   └─► Social engineering
